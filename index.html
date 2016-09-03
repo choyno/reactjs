@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<script type="text/javascript" src="js/react.js"></script>
+	<script type="text/javascript" src="js/react-dom.js"></script>
+	<script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	</head>
+	<body>
+
+	<div id="app"></div>
+   
+     
+	
+	<script type="text/babel">
+		var Navbar = React.createClass({
+				render: function(){
+				return(
+						<div>
+							 <nav className="navbar navbar-fixed-top navbar-inverse">
+						      <div className="container">
+						        <div className="navbar-header">
+						          <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						            <span className="sr-only">Boostrap React</span>
+						            <span className="icon-bar"></span>
+						            <span className="icon-bar"></span>
+						            <span className="icon-bar"></span>
+						          </button>
+						          <a className="navbar-brand" href="#">{this.props.brand}</a>
+						        </div>
+						        <div id="navbar" className="collapse navbar-collapse">
+						          <ul className="nav navbar-nav">
+						            <li className="active"><a href="#">Home</a></li>
+						            <li><a href="#about">About</a></li>
+						            <li><a href="#contact">Contact</a></li>
+						          </ul>
+						        </div>
+						      </div>
+						    </nav>
+					   </div>
+					 )
+
+				}
+
+		});
+
+
+
+		//jumbotron component
+
+		var Jumbotron = React.createClass({
+				render: function(){
+					return(
+					 <div className="container">
+				      <div className="row row-offcanvas row-offcanvas-right">
+				        <div className="col-xs-12 col-sm-12">
+				          <p className="pull-right visible-xs">
+				            <button type="button" className="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+				          </p>
+							<div className="jumbotron">
+					            <h1>Hello, world!</h1>
+					            <p>This is an example to show the potential of an offcanvas layout pattern in Bootstrap. Try some responsive-range viewport sizes to see it in action.</p>
+					        </div>	
+			         	</div>	
+			          </div>						
+			         </div>									
+			        )
+				
+
+}		});
+
+		//PageHome component
+		var PageHome = React.createClass({
+				render: function(){
+					return(
+					 <div className="container">
+				      <div className="row row-offcanvas row-offcanvas-right">
+				        <div className="col-xs-12 col-sm-12">
+				          <p className="pull-right visible-xs">
+				            <button type="button" className="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
+				          </p>
+				          
+				          <div className="row">
+				            <div className="col-xs-6 col-lg-4">
+				              <h2>Heading</h2>
+				              <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+				              <p><a className="btn btn-default" href="#" role="button">View details »</a></p>
+				            </div>
+				          </div>
+				        </div>
+				      </div>
+				     </div>
+					)
+				}
+
+		});
+
+		//Footer app component
+		var Footer = React.createClass({
+				render: function(){
+					return(
+						<div className="container">
+							 <hr/>
+							 <footer>
+							 	Niga production
+							 </footer>
+						</div>
+					)
+				}
+
+		});
+
+
+		//Main app component
+		var App = React.createClass({
+				render: function(){
+					return(
+					<div>
+						<Navbar brand="this is a brand"  navColor="white"/>
+						<Jumbotron/>
+						<PageHome/>
+						<Footer/>
+					</div>
+					)
+				}
+
+		});
+
+		ReactDOM.render(
+			<App />, 
+			document.getElementById('app')
+			)
+
+	</script>
+	
+	</body>
+</html>
